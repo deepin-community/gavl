@@ -1,0 +1,63 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Gmerlin Audio Video Library
+Upstream-Contact: Members of the Gmerlin project <gmerlin-general@lists.sourceforge.net>
+Source: https://sourceforge.net/projects/gmerlin/files/gavl/
+
+Files: *
+Copyright:
+ 2001-2011 Members of the Gmerlin project <gmerlin-general@lists.sourceforge.net>
+ 2001-2004 the xine project
+ 2004 Linas Vepstas <linas@linas.org>
+ 2001-2008 Erik de Castro Lopo <erikd@mega-nerd.com>
+ 2002 Steve Harris <steve@plugin.org.uk>
+ 2001-2002 Erik de Castro Lopo <erikd@zip.com.au>
+ 2000-2001 Michel Lespinasse <walken@zoy.org>
+ 1999-2000 Aaron Holtzman <aholtzma@ess.engr.uvic.ca>
+ 2000-2001 Michel Lespinasse <walken@zoy.org>
+ 1999-2000 Aaron Holtzman <aholtzma@ess.engr.uvic.ca>
+License: GPL-2+
+
+Files: include/bswap.h
+Copyright: 2006 Michael Niedermayer <michaelni@gmx.at>
+License: LGPL-2.1+
+
+Files: debian/*
+Copyright:
+ 2010-2012 Alessio Treglia <alessio@debian.org>
+ 2008-2009 Romain Beauxis <toots@rastageeks.org>
+ 2008 Christian Marillat <marillat@debian.org>
+License: GPL-2+
+
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+Comment:
+ On Debian systems, the complete text of the GNU General Public
+ License can be found in /usr/share/common-licenses/GPL-2 file.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+License: LGPL-2.1+
+ FFmpeg is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ .
+ FFmpeg is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+Comment:
+ On Debian systems, the complete text of the GNU Lesser General Public
+ License can be found in /usr/share/common-licenses/LGPL-2.1 file.
+ .
+ You should have received a copy of the GNU Lesser General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.

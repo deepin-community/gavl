@@ -1,0 +1,24 @@
+Description: don't fail on missing doxygen
+ Debian does not install doxygen on arch-dependent only builds.
+ Not having doxygen installed is a fatal error (unless the --without-doxygen
+ option is specified, which we don't want to do since we do want to build the
+ docs in the full builds)
+ .
+ Alternatively we could have used something like override_dh_auto_configure-{arch,indep}.
+ Check how libbluray is doing that..
+ 
+Author: IOhannes m zmölnig
+Last-Update: 2015-07-17
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- gavl.orig/configure.ac
++++ gavl/configure.ac
+@@ -53,7 +53,7 @@
+ if test "x$test_doxygen" = "xtrue"; then
+   AC_CHECK_PROG(DOXYGEN, doxygen, "doxygen")
+   if test -z "$DOXYGEN"; then
+-    AC_MSG_ERROR([Doxygen not found, use --without-doxygen to disable documentation generation])
++    AC_MSG_WARN([Doxygen not found, use --without-doxygen to disable documentation generation])
+   else
+     have_doxygen="true"
+   fi

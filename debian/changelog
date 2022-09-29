@@ -1,0 +1,226 @@
+gavl (1.4.0-5) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/copyright: Use https protocol in Format field
+  * d/control: Deprecating priority extra as per policy 4.0.1
+  * d/control: Set Vcs-* to salsa.debian.org
+
+  [ IOhannes m zmölnig ]
+  * Fixed cross-compilation issues.
+    Thanks to Helmut Grohne <helmut@subdivi.de> (Closes: #873710)
+  * Fixed spelling error in patch description
+  * Bumped dh compat to 11
+    * Switched to automatic dbgsym package
+    * Dropped B-Ds on autotools
+  * Switched URLs to https://
+  * Updated maintainer email address
+  * Removed trailing whitespace from d/changelog
+  * Dropped git-tuneclone.sh script
+  * Bumped standards version to 4.1.3
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Wed, 28 Feb 2018 22:06:21 +0100
+
+gavl (1.4.0-4) unstable; urgency=medium
+
+  * Team upload
+
+  [ IOhannes m zmölnig ]
+  * Mention override_dh_..-indep
+  * Update Vcs-Browser stanza
+  * Added debian/git-tuneclone.sh script
+  * Document git-tuneclone.sh in debian/README.source
+
+  [ Alessio Treglia ]
+  * Remove Romain Beauxis from Uploaders
+  * Remove myself from Uploaders
+
+ -- Alessio Treglia <alessio@debian.org>  Thu, 18 Feb 2016 01:20:11 +0000
+
+gavl (1.4.0-3) unstable; urgency=medium
+
+  * Make missing doxygen non-fatal to configure
+    - To allow arch-dependent-only builds
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Fri, 17 Jul 2015 23:34:19 +0200
+
+gavl (1.4.0-2) unstable; urgency=medium
+
+  * Patch to simplify cpuid() logic (Closes: #759626)
+    - Thanks to Adam Borowski
+  * Mark doxygen as B-D-Indep (Closes: #706810)
+  * Use anonymous access in Vcs-* stanzas
+  * Added myself as Uploader
+  * Removed deprecated DM-Upload-Allowed field
+  * Bumped standards version to 3.9.6
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Mon, 13 Jul 2015 16:05:27 +0200
+
+gavl (1.4.0-1) unstable; urgency=low
+
+  [ IOhannes m zmölnig ]
+  * New upstream release.
+  * Avoid empty lines within paragraph
+  * Removed vframefill_overflow.patch (no longer needed)
+  * Renamed patch 0002-ubuntu_armel_ftbfs.patch -> 0001-ubuntu_armel_ftbfs.patch
+  * debian/copyright:
+    - Use final DEP-5 format
+    - use 'Files:' rather than 'File:', even if it is only one
+    - Remove commas in 'Files:' section
+  * Bumped standards-version to 3.9.3
+  * Updated symbols file for libgavl1
+
+  [ Alessio Treglia ]
+  * debian/copyright:
+    - Group files by license, sort and use short-indent style.
+  * debian/control: Needs debhelper >= 9.
+
+ -- Alessio Treglia <alessio@debian.org>  Mon, 11 Jun 2012 12:21:55 +0200
+
+gavl (1.2.0-4) unstable; urgency=low
+
+  * Fix dh's sequence, use 'dh $@ --with foo' syntax.
+  * Enable parallel builds.
+  * Introduce Multi-Arch.
+  * Bump Standards-Version.
+  * Update debian/copyright.
+
+ -- Alessio Treglia <alessio@debian.org>  Tue, 17 Jan 2012 19:09:49 +0100
+
+gavl (1.2.0-3) unstable; urgency=low
+
+  * Upload to unstable.
+  * Add .gitignore to skip quilt files in the .pc/ directory.
+  * debian/gbp.conf: Set sign-tags to True.
+
+ -- Alessio Treglia <alessio@debian.org>  Mon, 07 Feb 2011 00:36:07 +0100
+
+gavl (1.2.0-2) experimental; urgency=low
+
+  [ IOhannes m zmölnig ]
+  * 0001-vframefill_overflow.patch: Fix array-out-of-bounds access.
+
+  [ Alessio Treglia ]
+  * 0002-ubuntu_armel_ftbfs.patch: Fix build failure on Ubuntu armel.
+
+ -- Alessio Treglia <alessio@debian.org>  Wed, 19 Jan 2011 15:31:28 +0100
+
+gavl (1.2.0-1) experimental; urgency=low
+
+  * New upstream release.
+  * debian/control:
+    - Update Standards to 3.9.1.
+    - Adopt one-dep-per-line style.
+  * debian/copyright:
+    - Update my email address, fix pattern in Files field.
+    - Wrong proposal revision number, set Format-Specification to rev 135.
+    - Clean-up and updates.
+  * Don't build static libraries anymore.
+  * Set libgavl-dev to architecture-independent.
+  * Update libgavl1.symbols file.
+
+ -- Alessio Treglia <alessio@debian.org>  Sun, 09 Jan 2011 13:22:22 +0100
+
+gavl (1.1.2-3) unstable; urgency=low
+
+  * Change my mail address.
+  * Add dh-autoreconf DH plugin support.
+  * Add debian/gbp.conf file.
+  * Switch to format 3.0 (quilt).
+  * Some little improvements to debian/copyright file.
+
+ -- Alessio Treglia <alessio@debian.org>  Sat, 26 Jun 2010 20:22:38 +0200
+
+gavl (1.1.2-2) unstable; urgency=low
+
+  * Switch to debhelper 7, drop cdbs.
+  * Run autoreconf before calling configure script (LP: #558502).
+  * Build-depend on automake, libtool, autotools-dev.
+  * Update changelog.
+  * Update symbols file.
+
+ -- Alessio Treglia <quadrispro@ubuntu.com>  Fri, 26 Mar 2010 14:20:45 +0100
+
+gavl (1.1.2-1) unstable; urgency=low
+
+  * New upstream release.
+  * Add Vcs-* tags.
+  * Update debian/copyright.
+  * Re-set priority to optional, extra is used for the -dbg runtime only.
+
+ -- Alessio Treglia <quadrispro@ubuntu.com>  Sun, 28 Feb 2010 19:43:40 +0100
+
+gavl (1.1.1-3) unstable; urgency=low
+
+  * debian/control:
+    - Change Maintainer to Debian Multimedia Packages Maintainers team.
+    - Add myself to Uploaders field.
+    - Allow uploads by Debian Maintainers.
+    - Bump Standards.
+    - Fix weak-library-dev-dependency lintian warning by adjusting the
+      versioned dependency on libgavl1.
+    - Fix copyright-refers-to-symlink-license lintian warnings.
+
+ -- Alessio Treglia <quadrispro@ubuntu.com>  Fri, 05 Feb 2010 15:09:51 +0100
+
+gavl (1.1.1-2) unstable; urgency=low
+
+  * Set cpuflags to none at configure in order to
+    have a portable binary. Optimizations are detected
+    at runtime.
+  Closes: #544734
+  * Bumped standards version to 3.8.3
+  * Added debug package.
+
+ -- Romain Beauxis <toots@rastageeks.org>  Sat, 12 Sep 2009 22:11:13 -0500
+
+gavl (1.1.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * Bumped compat to 7.
+  * Bumped standard version to 3.8.2
+
+ -- Romain Beauxis <toots@rastageeks.org>  Wed, 29 Jul 2009 12:16:32 +0200
+
+gavl (1.1.0-2) unstable; urgency=low
+
+  * Fixed debian/copyright
+
+ -- Romain Beauxis <toots@rastageeks.org>  Sat, 17 Jan 2009 20:38:33 +0100
+
+gavl (1.1.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Upstream bumped library soversion, renamed binary package
+    accordingly.
+
+ -- Romain Beauxis <toots@rastageeks.org>  Wed, 24 Dec 2008 15:40:18 +0100
+
+gavl (1.0.1-1) unstable; urgency=low
+
+  * Adopted package for debian, with the blessing of previous maintainer.
+  * Based new package on Christian Marillat's package for debian-multimedia.
+  * Removed support for ccache until I figure out how to make it work
+    with cdbs.
+  * Changed library package name since ABI is not backward compatible, but
+    upstream did not bump major soversion.
+
+ -- Romain Beauxis <toots@rastageeks.org>  Fri, 07 Nov 2008 13:47:46 +0100
+
+gavl (1.0.1-0.2) unstable; urgency=low
+
+  * The -dev package should depends on pkg-config.
+
+ -- Christian Marillat <marillat@debian.org>  Tue, 29 Jul 2008 15:47:06 +0200
+
+gavl (1.0.1-0.1) unstable; urgency=low
+
+  * Move doxygen from Build-Depends-Indep to Build-Depends.
+  * Added support for ccache.
+
+ -- Christian Marillat <marillat@debian.org>  Tue, 29 Jul 2008 08:29:10 +0200
+
+gavl (1.0.1-0.0) unstable; urgency=low
+
+  * Initial release.
+
+ -- Christian Marillat <marillat@debian.org>  Mon, 28 Jul 2008 09:29:33 +0200

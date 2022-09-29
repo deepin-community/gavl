@@ -1,0 +1,33 @@
+From: Helmut Grohne <helmut@subdivi.de>
+Subject: fix cross compilation
+
+Trying to determine whether CLOCK_MONOTONIC works is in vein, because it may
+differ from the buildd (in theory) being a runtime property of the kernel. For
+compiling gavl, it is sufficient to know that the macro is defined and to
+assume that on Debian systems CLOCK_MONOTONIC always works when it is defined.
+
+Index: gavl-1.4.0/configure.ac
+===================================================================
+--- gavl-1.4.0.orig/configure.ac
++++ gavl-1.4.0/configure.ac
+@@ -159,17 +159,12 @@
+ 
+ AC_MSG_CHECKING(for CLOCK_MONOTONIC)
+ 
+-AC_TRY_RUN([
++AC_TRY_COMPILE([
+   #include <time.h>
+   #include <errno.h>
+-main()
+-  {
++],[
+   struct timespec tp;
+-  if(clock_gettime(CLOCK_MONOTONIC, &tp))
+-    return -1;
+-  else
+-    return 0;
+-  }
++  clock_gettime(CLOCK_MONOTONIC, &tp);
+   ],
+   [
+     # program could be run
